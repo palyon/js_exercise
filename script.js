@@ -79,6 +79,16 @@ function printNumbers(startNumber, endNumber) {
 }
 //printNumbers(1, 10)
 
+function printNumbers2(startNumber, endNumber) {
+  var numbers = [startNumber];
+  while (startNumber < endNumber) {
+    startNumber++;
+    numbers.push(startNumber);
+  }
+  console.log(numbers);
+}
+printNumbers2(1, 10);
+
 function printSquare(dimension) {
   var style = "*"
   for(var i = 0; i < dimension; i++) {
