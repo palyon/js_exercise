@@ -87,15 +87,88 @@ function printNumbers2(startNumber, endNumber) {
   }
   console.log(numbers);
 }
-printNumbers2(1, 10);
+//printNumbers2(1, 10);
 
 function printSquare(dimension) {
-  var style = "*"
+  var style = "*";
   for(var i = 0; i < dimension; i++) {
-    console.log(style);
-    for(var i = 0; i < dimension; i++) {
-      console.log(style);
+      console.log(style.repeat(dimension));
+    }
+}
+//printSquare(5)
+
+function printBox(width, height) {
+  var style = "*";
+  console.log(style.repeat(width));
+  for (var i = 0; i < height; i++) {
+    console.log(style + (" ".repeat(width - 2)) + style);
+  }
+  console.log(style.repeat(width));
+}
+//printBox(6, 4);
+
+function printBanner(text) {
+  var style = "*";
+  var length = text.length;
+  console.log(style.repeat(length + 2))
+  console.log(style + text + style)
+  console.log(style.repeat(length + 2))
+}
+//printBanner("Welcome to DigitalCrafts")
+
+function factors(integar) {
+  for(var i = 1; i <= integar; i++) {
+    if (integar % i == 0) {
+      console.log(i);
     }
   }
 }
-printSquare(5)
+//factors(12)
+
+function cipher(message, offset) {
+  var alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+  var output = '';
+
+  for(var i = 0; i < message.length; i++) {
+    var letter = message[i];
+    var position = alphabet.indexOf(letter);
+    var newPosition = position - offset;
+
+    if (newPosition < 0) {
+      newPosition += 26;
+    }
+
+    var newLetter = alphabet[newPosition];
+
+    output += newLetter;
+  }
+
+  console.log(output);
+
+}
+//cipher('adam', 2)
+
+function decipher(message, offset) {
+  var alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+  var output = '';
+
+  for(var i = 0; i < message.length; i++) {
+    var letter = message[i];
+    var position = alphabet.indexOf(letter);
+    var newPosition = position + offset;
+
+    if (newPosition < 0) {
+      newPosition += 26;
+    }
+
+    var newLetter = alphabet[newPosition];
+
+    output += newLetter;
+  }
+
+  console.log(output);
+
+}
+decipher('ybyk', 2);
