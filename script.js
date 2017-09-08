@@ -171,4 +171,17 @@ function decipher(message, offset) {
   console.log(output);
 
 }
-decipher('ybyk', 2);
+//decipher('ybyk', 2);
+
+function positiveNumbers(array) {
+  var newArray = [];
+  for (var i = 0; i < array.length; i++) {
+    var number = array[i];
+    if (number > 0) {
+      newArray.push(number);
+    }
+  }
+  return newArray;
+}
+
+console.log(positiveNumbers([0, 3, 4, -2, -5, -9, 1]));
